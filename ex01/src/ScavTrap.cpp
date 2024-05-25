@@ -1,7 +1,7 @@
 #include "../inc/ScavTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap() {
-    this->_name = "Default";
+    // this->_name = "Default";
     this->_hp = 100;
     this->_ep = 50;
     this->_attDmg = 20;
@@ -10,7 +10,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-    this->_name = name;
+    // this->_name = name;
     this->_hp = 100;
     this->_ep = 50;
     this->_attDmg = 20;
@@ -20,6 +20,15 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 
 ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap " << _name << " destroyed." << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap& other) : ClapTrap(other){
+    // this->_name = other.getName();
+    // this->_hp = other.getHp();
+    // this->_ep = other.getEp();
+    this->_attDmg = other.getAttDmg();
+    this->_isGuarding = other._isGuarding;
+    std::cout << "ScavTrap " << _name << " created from another ScavTrap: " << other.getName() << std::endl;
 }
 
 void ScavTrap::attack(std::string const & target) {
