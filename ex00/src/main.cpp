@@ -7,6 +7,8 @@ int main() {
     ClapTrap claptrap4("Springtrap");
     ClapTrap claptrap5 = claptrap3;
 
+    std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
+
     claptrap.setAttDmg(1);
     for (int i = 0; i < 10; i++) {
         claptrap.attack("Springtrap");
