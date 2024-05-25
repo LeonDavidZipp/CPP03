@@ -2,6 +2,7 @@
 # define CLAPTRAP_HPP
 
 # include <string>
+# include <iostream>
 
 class ClapTrap {
     public:
@@ -18,6 +19,9 @@ class ClapTrap {
         int getHp();
         int getEp();
         int getAttDmg();
+
+        void setHp(int amount);
+        void setEp(int amount);
 
     private:
         std::string _name;
