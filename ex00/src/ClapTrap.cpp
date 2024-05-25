@@ -1,19 +1,25 @@
 #include "../inc/ClapTrap.hpp"
 
 // Constructors && Destructors
-ClapTrap::ClapTrap() : _name("Default"), _hp(10), _ep(10), _attDmg(0) {}
+ClapTrap::ClapTrap() : _name("Default"), _hp(10), _ep(10), _attDmg(0) {
+    std::cout << "ClapTrap " << this->getName() << " is created." << std::endl;
+}
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _attDmg(0) {}
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _attDmg(0) {
+    std::cout << "ClapTrap " << this->getName() << " is created." << std::endl;
+}
 
 ClapTrap::ClapTrap(ClapTrap& other) {
     this->_name = other.getName();
     this->_hp = other.getHp();
     this->_ep = other.getEp();
     this->_attDmg = other.getAttDmg();
+    std::cout << "ClapTrap " << this->getName() << " is created from another ClapTrap." << other.getName() << std::endl;
 }
 
-ClapTrap::~ClapTrap() {}
-
+ClapTrap::~ClapTrap() {
+    std::cout << "ClapTrap " << this->getName() << " is destroyed." << std::endl;
+}
 
 // Getters
 std::string ClapTrap::getName() {
