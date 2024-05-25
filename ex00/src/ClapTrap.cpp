@@ -45,9 +45,19 @@ void ClapTrap::setEp(int amount) {
     this->_ep = amount;
 }
 
+void ClapTrap::setAttDmg(int amount) {
+    this->_attDmg = amount;
+}
+
 // Actions
 void ClapTrap::attack(const std::string& target) {
     std::string name = this->getName();
+
+    if (this->getHp() <= 0) {
+        std::cout << name << " can't attack. It's dead." << std::endl;
+        return ;
+    }
+
     int ep = this->getEp();
     if (ep <= 0) {
         std::cout << name << " can't attack. No Energy Points left." << std::endl;
@@ -76,14 +86,13 @@ void ClapTrap::takeDamage(unsigned int amount) {
     } else {
         this->setHp(0);
         std::cout << name << " died." << std::endl;
-        delete this;
     }
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
     int hp = this->getHp();
     if (hp <= 0) {
-        delete this;
+        std::cout << this->getName() << " can't repair itself. It's dead." << std::endl;
         return ;
     }
 

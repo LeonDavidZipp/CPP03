@@ -22,6 +22,7 @@ class ClapTrap {
 
         void setHp(int amount);
         void setEp(int amount);
+        void setAttDmg(int amount);
 
     private:
         std::string _name;
