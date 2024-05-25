@@ -67,25 +67,32 @@ void ClapTrap::attack(const std::string& target) {
     std::cout << this->_name << " attacks " << target << ", causing " << this->getAttDmg() << " points of damage!" << std::endl;
 
     int newEp = ep - 1;
-    if (newEp > 0) {
-        this->setEp(newEp);
-    } else {
-        this->setEp(0);
+    newEp = newEp > 0 ? newEp : 0;
+    this->setEp(newEp);
+
+    if (newEp == 0) {
         std::cout << name << " has no Energy Points left." << std::endl;
+    } else {
+        std::cout << name << " has " << newEp << " Energy Points left." << std::endl;
     }
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
     std::string name = this->getName();
 
+    int hp = this->getHp();
+    if (hp <= 0) {
+        std::cout << name << " is mercilessly beaten even though it is already dead." << std::endl;
+        return ;
+    }
     std::cout << name << " has taken " << amount << " damage." << std::endl;
 
-    int newHp = this->getHp() - (int)amount;
-    if (newHp > 0) {
-        this->setHp(newHp);
-    } else {
-        this->setHp(0);
+    int newHp = (hp - (int)amount) <= 0 ? 0 : hp - (int)amount;
+    this->setHp(newHp);
+    if (newHp == 0) {
         std::cout << name << " died." << std::endl;
+    } else {
+        std::cout << name << " has " << newHp << " HP left." << std::endl;
     }
 }
 
@@ -104,13 +111,17 @@ void ClapTrap::beRepaired(unsigned int amount) {
         return ;
     }
 
+    std::cout << name << " is being repaired for " << amount << " HP." << std::endl;
     this->setHp(hp + (int)amount);
+    std::cout << name << " has " << this->getHp() << " HP now." << std::endl;
 
     int newEp = ep - 1;
-    if (newEp > 0) {
-        this->setEp(newEp);
-    } else {
-        this->setEp(0);
+    newEp = newEp > 0 ? newEp : 0;
+    this->setEp(newEp);
+
+    if (newEp == 0) {
         std::cout << name << " has no Energy Points left." << std::endl;
+    } else {
+        std::cout << name << " has " << newEp << " Energy Points left." << std::endl;
     }
 }
