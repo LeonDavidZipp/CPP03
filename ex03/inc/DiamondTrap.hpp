@@ -12,6 +12,8 @@ class DiamondTrap : public ScavTrap, public FragTrap {
         DiamondTrap(DiamondTrap& other);
         ~DiamondTrap();
 
+        DiamondTrap& operator=(DiamondTrap& other);
+
         void whoAmI();
 
     private:

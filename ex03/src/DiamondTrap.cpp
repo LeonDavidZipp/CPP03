@@ -1,14 +1,40 @@
 #include "../inc/DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap() {
-    _name = "Default";
-    ClapTrap::_name = _name + "_clap_name";
-    std::cout << "DiamondTrap " << _name << " has been created" << std::endl;
+DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name") {
+    this->_name = "Default";
+    this->_hp = FragTrap::_hp;
+	this->_ep = ScavTrap::_ep;
+	this->_attDmg = FragTrap::_attDmg;
+    std::cout << "DiamondTrap\t" << _name << " has been created" << std::endl;
 }
 
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name") {
+    this->_name = name;
+    this->_hp = FragTrap::_hp;
+    this->_ep = ScavTrap::_ep;
+    this->_attDmg = FragTrap::_attDmg;
+    std::cout << "DiamondTrap\t" << _name << " has been created" << std::endl;
+}
+
+DiamondTrap::DiamondTrap(DiamondTrap& other) {
+    this->_name = other.getName();
+    this->_hp = other.getHp();
+    this->_ep = other.getEp();
+    this->_attDmg = other.getAttDmg();
+    std::cout << "DiamondTrap\t" << _name << " has been created from another DiamondTrap: " << other._name << std::endl;
+}
+
+DiamondTrap& DiamondTrap::operator=(DiamondTrap& other) {
+    this->_name = other.getName();
+    this->_hp = other.getHp();
+    this->_ep = other.getEp();
+    this->_attDmg = other.getAttDmg();
+    std::cout << "DiamondTrap\t" << _name << " has been created from another DiamondTrap: " << other._name << std::endl;
+    return *this;
+}
 
 DiamondTrap::~DiamondTrap() {
-    std::cout << "DiamondTrap " << _name << " has been destroyed" << std::endl;
+    std::cout << "DiamondTrap\t" << _name << " has been destroyed" << std::endl;
 }
 
 
