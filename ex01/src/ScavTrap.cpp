@@ -31,6 +31,14 @@ ScavTrap::ScavTrap(ScavTrap& other) : ClapTrap(other){
     std::cout << "ScavTrap " << _name << " created from another ScavTrap: " << other.getName() << std::endl;
 }
 
+bool ScavTrap::getIsGuarding() const {
+    return this->_isGuarding;
+}
+
+void ScavTrap::setIsGuarding(bool isGuarding) {
+    this->_isGuarding = isGuarding;
+}
+
 void ScavTrap::attack(std::string const & target) {
     std::string name = this->getName();
 
@@ -59,10 +67,18 @@ void ScavTrap::attack(std::string const & target) {
 }
 
 void ScavTrap::guardGate() {
-    this->_isGuarding = !this->_isGuarding;
-    if (this->_isGuarding) {
-         std::cout << "ScavTrap " << _name << " has entered in Gate keeper mode." << std::endl;
+    if (this->getHp() <= 0) {
+        std::cout << "ScavTrap " << this->getName() << " can't guard. It's dead." << std::endl;
+        return ;
+    }
+
+    std::string name = this->getName();
+
+    bool isGuarding = !this->getIsGuarding();
+    setIsGuarding(isGuarding);
+    if (isGuarding) {
+         std::cout << "ScavTrap " << name << " has entered in Gate keeper mode." << std::endl;
     } else {
-        std::cout << "ScavTrap " << _name << " has exited from Gate keeper mode." << std::endl;
+        std::cout << "ScavTrap " << name << " has exited from Gate keeper mode." << std::endl;
     }
 }

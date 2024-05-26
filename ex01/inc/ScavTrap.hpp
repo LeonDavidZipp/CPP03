@@ -10,6 +10,9 @@ class ScavTrap : public ClapTrap {
         ScavTrap(ScavTrap& other);
         ~ScavTrap();
 
+        bool getIsGuarding() const;
+        void setIsGuarding(bool isGuarding);
+
         void attack(const std::string& target);
         void guardGate();
 
