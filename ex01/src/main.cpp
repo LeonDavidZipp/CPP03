@@ -1,11 +1,11 @@
-#include "../inc/ClapTrap.hpp"
+#include "../inc/ScavTrap.hpp"
 
 int main() {
-    ClapTrap claptrap("Freddy");
-    ClapTrap claptrap2(claptrap);
-    ClapTrap claptrap3;
-    ClapTrap claptrap4("Springtrap");
-    ClapTrap claptrap5 = claptrap3;
+    ScavTrap claptrap("Freddy");
+    ScavTrap claptrap2(claptrap);
+    ScavTrap claptrap3;
+    ScavTrap claptrap4("Springtrap");
+    ScavTrap claptrap5 = claptrap3;
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
