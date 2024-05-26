@@ -14,11 +14,7 @@ class FragTrap : public ClapTrap {
         void setIsGuarding(bool isGuarding);
 
         void attack(const std::string& target);
-        void guardGate();
-
-    protected:
-        bool _isGuarding;
-
+        void highFivesGuys();
 };
 
 #endif
