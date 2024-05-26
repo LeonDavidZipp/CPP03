@@ -48,5 +48,10 @@ void FragTrap::attack(std::string const & target) {
 }
 
 void FragTrap::highFivesGuys() {
+    if (this->getHp() <= 0) {
+        std::cout << "FragTrap\t" << this->getName() << " can't request a High Five. It's dead." << std::endl;
+        return ;
+    }
+
     std::cout << "FragTrap\t" << this->getName() << " requests the Highest of Fives!" << std::endl;
 }
