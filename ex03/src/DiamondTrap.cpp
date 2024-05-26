@@ -7,6 +7,10 @@ DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap() {
 }
 
 
+DiamondTrap::~DiamondTrap() {
+    std::cout << "DiamondTrap " << _name << " has been destroyed" << std::endl;
+}
+
 
 void DiamondTrap::whoAmI() {
     std::cout << "My DiamondTrap name is " << _name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
