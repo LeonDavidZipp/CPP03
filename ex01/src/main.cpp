@@ -32,5 +32,11 @@ int main() {
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
+    claptrap2.guardGate();
+    claptrap2.setHp(0);
+    claptrap2.guardGate();
+
+    std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
+
     return 0;
 }

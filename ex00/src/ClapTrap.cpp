@@ -14,7 +14,7 @@ ClapTrap::ClapTrap(ClapTrap& other) {
     this->_hp = other.getHp();
     this->_ep = other.getEp();
     this->_attDmg = other.getAttDmg();
-    std::cout << "ClapTrap " << this->getName() << " is created from another ClapTrap." << other.getName() << std::endl;
+    std::cout << "ClapTrap " << this->getName() << " is created from another ClapTrap: " << other.getName() << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
