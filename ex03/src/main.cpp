@@ -1,40 +1,44 @@
-#include "../inc/FragTrap.hpp"
+#include "../inc/DiamondTrap.hpp"
 
 int main() {
-    FragTrap fragtrap("Freddy");
-    FragTrap fragtrap2(fragtrap);
-    FragTrap fragtrap3;
-    FragTrap fragtrap4("Springtrap");
-    FragTrap fragtrap5 = fragtrap3;
+    DiamondTrap diamondtrap("Freddy");
+    DiamondTrap diamondtrap2(diamondtrap);
+    DiamondTrap diamondtrap3;
+    DiamondTrap diamondtrap4("Springtrap");
+    DiamondTrap diamondtrap5 = diamondtrap3;
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
     for (int i = 0; i < 5; i++) {
-        fragtrap.attack("Springtrap");
-        fragtrap4.takeDamage(fragtrap.getAttDmg());
+        diamondtrap.attack("Springtrap");
+        diamondtrap4.takeDamage(diamondtrap.getAttDmg());
     }
-    fragtrap.attack("Springtrap");
-    fragtrap4.attack("Freddy");
+    diamondtrap.attack("Springtrap");
+    diamondtrap4.attack("Freddy");
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
-    fragtrap.beRepaired(5);
-    fragtrap4.beRepaired(5);
+    diamondtrap.beRepaired(5);
+    diamondtrap4.beRepaired(5);
 
-    fragtrap2.beRepaired(5);
-    fragtrap3.beRepaired(5);
-    fragtrap5.beRepaired(5);
-
-    std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
-
-    fragtrap2.attack("Springtrap");
-    fragtrap4.takeDamage(fragtrap2.getAttDmg());
+    diamondtrap2.beRepaired(5);
+    diamondtrap3.beRepaired(5);
+    diamondtrap5.beRepaired(5);
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
-    fragtrap2.highFivesGuys();
-    fragtrap2.setHp(0);
-    fragtrap2.highFivesGuys();
+    diamondtrap2.attack("Springtrap");
+    diamondtrap4.takeDamage(diamondtrap2.getAttDmg());
+
+    std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
+
+    diamondtrap2.highFivesGuys();
+    diamondtrap2.setHp(0);
+    diamondtrap2.highFivesGuys();
+
+    std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
+
+    diamondtrap.whoAmI();
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 

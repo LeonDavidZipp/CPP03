@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ex02Test
+NAME := ex03Test
 
 CPP := c++
 CPPFLAGS := -Wextra -Wall -Werror -std=c++98
 
 SRCDIR := ./src
-SOURCES := $(addprefix $(SRCDIR)/, main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp)
+SOURCES := $(addprefix $(SRCDIR)/, main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp)
 OBJDIR = ./obj
 OBJECTS := $(addprefix $(OBJDIR)/, $(notdir $(SOURCES:.cpp=.o)))
 
