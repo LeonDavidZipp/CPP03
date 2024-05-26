@@ -38,6 +38,12 @@ int main() {
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
+    diamondtrap.guardGate();
+    diamondtrap2.setHp(0);
+    diamondtrap.guardGate();
+
+    std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
+
     diamondtrap.whoAmI();
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
