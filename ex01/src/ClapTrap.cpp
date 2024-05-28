@@ -17,6 +17,16 @@ ClapTrap::ClapTrap(ClapTrap& other) {
     std::cout << "ClapTrap\t" << this->getName() << " is created from another ClapTrap: " << other.getName() << std::endl;
 }
 
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
+    if (this != &other) {
+        this->_name = other.getName();
+        this->_hp = other.getHp();
+        this->_ep = other.getEp();
+        this->_attDmg = other.getAttDmg();
+    }
+    return *this;
+}
+
 ClapTrap::~ClapTrap() {
     std::cout << "ClapTrap\t" << this->getName() << " is destroyed." << std::endl;
 }

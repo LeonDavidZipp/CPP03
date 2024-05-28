@@ -22,7 +22,7 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
-    if (this == &other) {
+    if (this != &other) {
         this->_name = other.getName();
         this->_hp = other.getHp();
         this->_ep = other.getEp();

@@ -11,6 +11,8 @@ class ClapTrap {
         ClapTrap(ClapTrap& other);
         ~ClapTrap();
 
+        ClapTrap& operator=(const ClapTrap& other);
+
         std::string getName() const;
         int getHp() const;
         int getEp() const;

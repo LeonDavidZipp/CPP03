@@ -12,7 +12,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
     std::cout << "FragTrap\t" << _name << " created." << std::endl;
 }
 
-FragTrap::~FragTrap() {
+FragTrap::~FragTrap() : ~ClapTrap() {
     std::cout << "FragTrap\t" << _name << " destroyed." << std::endl;
 }
 
