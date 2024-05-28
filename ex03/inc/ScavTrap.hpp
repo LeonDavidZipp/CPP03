@@ -10,6 +10,8 @@ class ScavTrap : virtual public ClapTrap {
         ScavTrap(ScavTrap& other);
         ~ScavTrap();
 
+        ScavTrap& operator=(const ScavTrap& other);
+
         bool getIsGuarding() const;
         void setIsGuarding(bool isGuarding);
 

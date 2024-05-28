@@ -24,7 +24,7 @@ DiamondTrap::DiamondTrap(DiamondTrap& other) {
     std::cout << "DiamondTrap\t" << _name << " has been created from another DiamondTrap: " << other._name << std::endl;
 }
 
-DiamondTrap& DiamondTrap::operator=(DiamondTrap& other) {
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other) {
     this->_name = other.getName();
     this->_hp = other.getHp();
     this->_ep = other.getEp();
@@ -41,6 +41,6 @@ void DiamondTrap::attack(const std::string& target) {
     ScavTrap::attack(target);
 }
 
-void DiamondTrap::whoAmI() {
+void DiamondTrap::whoAmI() const {
     std::cout << "My DiamondTrap name is " << _name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
 }

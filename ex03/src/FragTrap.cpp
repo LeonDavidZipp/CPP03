@@ -12,12 +12,22 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
     std::cout << "FragTrap\t" << _name << " created." << std::endl;
 }
 
-FragTrap::~FragTrap() {
-    std::cout << "FragTrap\t" << _name << " destroyed." << std::endl;
-}
-
 FragTrap::FragTrap(FragTrap& other) : ClapTrap(other){
     std::cout << "FragTrap\t" << _name << " created from another FragTrap: " << other.getName() << std::endl;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& other) {
+    if (this != &other) {
+        this->_name = other.getName();
+        this->_hp = other.getHp();
+        this->_ep = other.getEp();
+        this->_attDmg = other.getAttDmg();
+    }
+    return *this;
+}
+
+FragTrap::~FragTrap(){
+    std::cout << "FragTrap\t" << _name << " destroyed." << std::endl;
 }
 
 void FragTrap::attack(std::string const & target) {
@@ -47,7 +57,7 @@ void FragTrap::attack(std::string const & target) {
     }
 }
 
-void FragTrap::highFivesGuys() {
+void FragTrap::highFivesGuys() const {
     if (this->getHp() <= 0) {
         std::cout << "FragTrap\t" << this->getName() << " can't request a High Five. It's dead." << std::endl;
         return ;
