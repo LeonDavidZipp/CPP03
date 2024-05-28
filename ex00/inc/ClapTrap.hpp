@@ -11,14 +11,16 @@ class ClapTrap {
         ClapTrap(ClapTrap& other);
         ~ClapTrap();
 
+        ClapTrap& operator=(const ClapTrap& other);
+
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 
-        std::string getName();
-        int getHp();
-        int getEp();
-        int getAttDmg();
+        std::string getName() const;
+        int getHp() const;
+        int getEp() const;
+        int getAttDmg() const;
 
         void setHp(int amount);
         void setEp(int amount);
