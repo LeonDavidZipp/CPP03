@@ -20,3 +20,4 @@ class FragTrap : virtual public ClapTrap {
 };
 
 #endif
+
