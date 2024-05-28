@@ -10,6 +10,8 @@ class FragTrap : public ClapTrap {
         FragTrap(FragTrap& other);
         ~FragTrap();
 
+        FragTrap& operator=(const FragTrap& other);
+
         bool getIsGuarding() const;
         void setIsGuarding(bool isGuarding);
 
