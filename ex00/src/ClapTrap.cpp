@@ -21,6 +21,16 @@ ClapTrap::~ClapTrap() {
     std::cout << "ClapTrap " << this->getName() << " is destroyed." << std::endl;
 }
 
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
+    if (this == &other) {
+        this->_name = other.getName();
+        this->_hp = other.getHp();
+        this->_ep = other.getEp();
+        this->_attDmg = other.getAttDmg();
+    }
+    return *this;
+}
+
 // Getters
 std::string ClapTrap::getName() {
     return this->_name;
