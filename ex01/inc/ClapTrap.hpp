@@ -11,10 +11,6 @@ class ClapTrap {
         ClapTrap(ClapTrap& other);
         ~ClapTrap();
 
-        void attack(const std::string& target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
-
         std::string getName() const;
         int getHp() const;
         int getEp() const;
@@ -23,6 +19,10 @@ class ClapTrap {
         void setHp(int amount);
         void setEp(int amount);
         void setAttDmg(int amount);
+
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
 
     protected:
         std::string _name;
