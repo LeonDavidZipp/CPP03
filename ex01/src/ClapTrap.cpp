@@ -22,17 +22,17 @@ ClapTrap::~ClapTrap() {
 }
 
 // Getters
-std::string ClapTrap::getName() {
+std::string ClapTrap::getName() const {
     return this->_name;
 }
-int ClapTrap::getHp() {
+int ClapTrap::getHp() const {
     return this->_hp;
 }
 
-int ClapTrap::getEp() {
+int ClapTrap::getEp() const {
     return this->_ep;
 }
-int ClapTrap::getAttDmg() {
+int ClapTrap::getAttDmg() const {
     return this->_attDmg;
 }
 
