@@ -11,18 +11,20 @@ class ClapTrap {
         ClapTrap(ClapTrap& other);
         ~ClapTrap();
 
-        void attack(const std::string& target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
+        ClapTrap& operator=(const ClapTrap& other);
 
-        std::string getName();
-        int getHp();
-        int getEp();
-        int getAttDmg();
+        std::string getName() const;
+        int getHp() const;
+        int getEp() const;
+        int getAttDmg() const;
 
         void setHp(int amount);
         void setEp(int amount);
         void setAttDmg(int amount);
+
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
 
     protected:
         std::string _name;

@@ -14,13 +14,24 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
     std::cout << "ScavTrap\t" << _name << " created." << std::endl;
 }
 
-ScavTrap::~ScavTrap() {
-    std::cout << "ScavTrap\t" << _name << " destroyed." << std::endl;
-}
-
 ScavTrap::ScavTrap(ScavTrap& other) : ClapTrap(other){
     this->_isGuarding = other._isGuarding;
     std::cout << "ScavTrap\t" << _name << " created from another ScavTrap: " << other.getName() << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+    if (this != &other) {
+        this->_name = other.getName();
+        this->_hp = other.getHp();
+        this->_ep = other.getEp();
+        this->_attDmg = other.getAttDmg();
+        this->_isGuarding = other.getIsGuarding();
+    }
+    return *this;
+}
+
+ScavTrap::~ScavTrap() {
+    std::cout << "ScavTrap\t" << _name << " destroyed." << std::endl;
 }
 
 bool ScavTrap::getIsGuarding() const {
