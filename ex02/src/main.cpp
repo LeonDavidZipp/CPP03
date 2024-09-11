@@ -1,40 +1,53 @@
 #include "../inc/FragTrap.hpp"
 
 int main() {
-    FragTrap fragtrap("Freddy");
-    FragTrap fragtrap2(fragtrap);
-    FragTrap fragtrap3;
-    FragTrap fragtrap4("Springtrap");
-    FragTrap fragtrap5 = fragtrap3;
+    FragTrap claptrap("Freddy");
+    std::cout << "name: " << claptrap.getName() << std::endl;
+    std::cout << "hp: " << claptrap.getHp() << std::endl;
+    std::cout << "ep: " << claptrap.getEp() << std::endl;
+    std::cout << "attDmg: " << claptrap.getAttDmg() << std::endl;
+    FragTrap claptrap2(claptrap);
+    FragTrap claptrap3;
+    std::cout << "default name: " << claptrap3.getName() << std::endl;
+    std::cout << "default hp: " << claptrap.getHp() << std::endl;
+    std::cout << "default ep: " << claptrap.getEp() << std::endl;
+    std::cout << "default attDmg: " << claptrap.getAttDmg() << std::endl;
+    FragTrap claptrap4("Springtrap");
+    claptrap3 = claptrap4;
+
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
-    for (int i = 0; i < 5; i++) {
-        fragtrap.attack("Springtrap");
-        fragtrap4.takeDamage(fragtrap.getAttDmg());
+    claptrap.setAttDmg(1);
+    for (int i = 0; i < 10; i++) {
+        std::cout << "attack " << i << " -----" << std::endl;
+        claptrap.attack("Springtrap");
+        claptrap4.takeDamage(claptrap.getAttDmg());
+        std::cout << std::endl;
     }
-    fragtrap.attack("Springtrap");
-    fragtrap4.attack("Freddy");
+
+    std::cout << "edge cases -----" << std::endl;
+    claptrap.attack("Springtrap");
+    claptrap4.attack("Freddy");
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
-    fragtrap.beRepaired(5);
-    fragtrap4.beRepaired(5);
+    claptrap.beRepaired(5);
+    claptrap4.beRepaired(5);
 
-    fragtrap2.beRepaired(5);
-    fragtrap3.beRepaired(5);
-    fragtrap5.beRepaired(5);
-
-    std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
-
-    fragtrap2.attack("Springtrap");
-    fragtrap4.takeDamage(fragtrap2.getAttDmg());
+    claptrap2.beRepaired(5);
+    claptrap3.beRepaired(5);
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
-    fragtrap2.highFivesGuys();
-    fragtrap2.setHp(0);
-    fragtrap2.highFivesGuys();
+    claptrap2.attack("Springtrap");
+    claptrap4.takeDamage(claptrap2.getAttDmg());
+
+    std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
+
+    claptrap2.highFivesGuys();
+    claptrap2.setHp(0);
+    claptrap2.highFivesGuys();
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 

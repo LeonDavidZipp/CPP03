@@ -16,7 +16,7 @@ class FragTrap : public ClapTrap {
         void setIsGuarding(bool isGuarding);
 
         void attack(const std::string& target);
-        void highFivesGuys();
+        void highFivesGuys() const;
 };
 
 #endif

@@ -20,7 +20,6 @@ class ScavTrap : public ClapTrap {
 
     protected:
         bool _isGuarding;
-
 };
 
 #endif
