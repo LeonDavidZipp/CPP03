@@ -5,15 +5,19 @@ int main() {
     ClapTrap claptrap2(claptrap);
     ClapTrap claptrap3;
     ClapTrap claptrap4("Springtrap");
-    ClapTrap claptrap5 = claptrap3;
+    claptrap3 = claptrap4;
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
     claptrap.setAttDmg(1);
-    for (int i = 0; i < 10; i++) {
+    for (uint8_t i = 0; i < 10; i++) {
+        std::cout << "attack " << i << " -----" << std::endl;
         claptrap.attack("Springtrap");
         claptrap4.takeDamage(claptrap.getAttDmg());
+        std::cout << std::endl;
     }
+
+    std::cout << "edge cases -----" << std::endl;
     claptrap.attack("Springtrap");
     claptrap4.attack("Freddy");
 
@@ -24,7 +28,6 @@ int main() {
 
     claptrap2.beRepaired(5);
     claptrap3.beRepaired(5);
-    claptrap5.beRepaired(5);
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 

@@ -1,6 +1,8 @@
 #include "../inc/ClapTrap.hpp"
 
-// Constructors && Destructors
+/* ************************************************************************************ */
+/* Constructors && Destructor                                                           */
+/* ************************************************************************************ */
 ClapTrap::ClapTrap() : _name("Default"), _hp(10), _ep(10), _attDmg(0) {
     std::cout << "ClapTrap " << this->getName() << " is created." << std::endl;
 }
@@ -28,10 +30,13 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
         this->_ep = other.getEp();
         this->_attDmg = other.getAttDmg();
     }
+    std::cout << "ClapTrap " << this->getName() << " is assigned from another ClapTrap: " << other.getName() << std::endl;
     return *this;
 }
 
-// Getters
+/* ************************************************************************************ */
+/* Getters && Setters                                                                   */
+/* ************************************************************************************ */
 std::string ClapTrap::getName() const {
     return this->_name;
 }
@@ -59,7 +64,9 @@ void ClapTrap::setAttDmg(int amount) {
     this->_attDmg = amount;
 }
 
-// Actions
+/* ************************************************************************************ */
+/* Member functions                                                                     */
+/* ************************************************************************************ */
 void ClapTrap::attack(const std::string& target) {
     std::string name = this->getName();
 
