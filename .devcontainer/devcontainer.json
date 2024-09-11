@@ -1,0 +1,68 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "42 Dev Container",
+	"forwardPorts": [ 4242 ],
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	// "dockerFile": "Dockerfile",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/zsh",
+				"files.autoSave": "afterDelay",
+				"files.autoSaveDelay": 10,
+				"editor.formatOnSave": true,
+				"editor.renderWhitespace": "all",
+				"editor.tabSize": 4,
+				"editor.insertSpaces": false,
+				"42header.email": "lzipp@student.42heilbronn.de",
+				"42header.username": "lzipp"
+			},
+			"extensions": [
+				// docker
+				"ms-vscode-remote.remote-containers",
+				"ms-azuretools.vscode-docker",
+
+				// 42 shit
+				"kube.42header",
+				"keyhr.42-c-format",
+				"MariusvanWijk-JoppeKoers.codam-norminette-3",
+
+				// C & C++
+				"mitaki28.vscode-clang",
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.cpptools-themes",
+				"twxs.cmake",
+				"ms-vscode.cmake-tools",
+				"vadimcn.vscode-lldb",
+				"ms-vscode.makefile-tools",
+
+				// Git
+				"GitHub.copilot",
+				"mhutchie.git-graph",
+
+				// other
+				"tomoki1207.pdf"
+			]
+		}
+	},
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "echo 'C and C++ devcontainer'",
+
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
+	]
+
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

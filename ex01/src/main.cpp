@@ -2,17 +2,30 @@
 
 int main() {
     ScavTrap claptrap("Freddy");
+    std::cout << "name: " << claptrap.getName() << std::endl;
+    std::cout << "hp: " << claptrap.getHp() << std::endl;
+    std::cout << "ep: " << claptrap.getEp() << std::endl;
+    std::cout << "attDmg: " << claptrap.getAttDmg() << std::endl;
     ScavTrap claptrap2(claptrap);
     ScavTrap claptrap3;
+    std::cout << "default name: " << claptrap3.getName() << std::endl;
+    std::cout << "default hp: " << claptrap.getHp() << std::endl;
+    std::cout << "default ep: " << claptrap.getEp() << std::endl;
+    std::cout << "default attDmg: " << claptrap.getAttDmg() << std::endl;
     ScavTrap claptrap4("Springtrap");
-    ScavTrap claptrap5 = claptrap3;
+    claptrap3 = claptrap4;
+
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
-    for (int i = 0; i < 5; i++) {
+    for (uint8_t i = 0; i < 10; i++) {
+        std::cout << "attack " << i << " -----" << std::endl;
         claptrap.attack("Springtrap");
         claptrap4.takeDamage(claptrap.getAttDmg());
+        std::cout << std::endl;
     }
+
+    std::cout << "edge cases -----" << std::endl;
     claptrap.attack("Springtrap");
     claptrap4.attack("Freddy");
 
@@ -23,7 +36,6 @@ int main() {
 
     claptrap2.beRepaired(5);
     claptrap3.beRepaired(5);
-    claptrap5.beRepaired(5);
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
