@@ -1,10 +1,10 @@
 #include "../inc/DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name") {
-    this->_name = "Default";
+    this->_name = "Default_diamond_name";
     this->_hp = FragTrap::_hp;
-	this->_ep = ScavTrap::_ep;
-	this->_attDmg = FragTrap::_attDmg;
+    this->_ep = ScavTrap::_ep;
+    this->_attDmg = FragTrap::_attDmg;
     std::cout << "DiamondTrap\t" << _name << " has been created" << std::endl;
 }
 
@@ -16,7 +16,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name") {
     std::cout << "DiamondTrap\t" << _name << " has been created" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap& other) {
+DiamondTrap::DiamondTrap(DiamondTrap& other) : ClapTrap(other), ScavTrap(other), FragTrap(other) {
     this->_name = other.getName();
     this->_hp = other.getHp();
     this->_ep = other.getEp();

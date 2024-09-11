@@ -6,14 +6,14 @@
 #    By: lzipp <lzipp@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 09:34:57 by lzipp             #+#    #+#              #
-#    Updated: 2024/04/03 22:32:55 by lzipp            ###   ########.fr        #
+#    Updated: 2024/09/11 10:04:27 by lzipp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ex03Test
+NAME := ex03
 
 CPP := c++
-CPPFLAGS := -Wextra -Wall -Werror -std=c++98
+CPPFLAGS := -Wextra -Wall -Werror -std=c++11 -Wshadow -Wno-shadow
 
 SRCDIR := ./src
 SOURCES := $(addprefix $(SRCDIR)/, main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp)
