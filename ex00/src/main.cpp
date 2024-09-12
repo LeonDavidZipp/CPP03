@@ -2,6 +2,7 @@
 
 int main() {
     ClapTrap claptrap("Freddy");
+	std::cout << "initializing --------------------------------" << std::endl;
     std::cout << "name: " << claptrap.getName() << std::endl;
     std::cout << "hp: " << claptrap.getHp() << std::endl;
     std::cout << "ep: " << claptrap.getEp() << std::endl;
@@ -15,6 +16,14 @@ int main() {
     ClapTrap claptrap4("Springtrap");
     claptrap3 = claptrap4;
 
+    std::cout << std::endl << "setters --------------------------------" << std::endl << std::endl;
+    ClapTrap claptrap5;
+    claptrap5.setHp(10);
+    claptrap5.setEp(10);
+    claptrap5.setAttDmg(10);
+    std::cout << "hp: " << claptrap5.getHp() << std::endl;
+    std::cout << "ep: " << claptrap5.getEp() << std::endl;
+    std::cout << "attDmg: " << claptrap5.getAttDmg() << std::endl;
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
