@@ -18,8 +18,7 @@ int main() {
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
-    claptrap.setAttDmg(1);
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 4; i++) {
         std::cout << "attack " << i << " -----" << std::endl;
         claptrap.attack("Springtrap");
         claptrap4.takeDamage(claptrap.getAttDmg());

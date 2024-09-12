@@ -1,14 +1,14 @@
 #include "../inc/FragTrap.hpp"
 
 FragTrap::FragTrap() : ClapTrap() {
-    this->_ep = 50;
-    this->_attDmg = 20;
+    this->_ep = 100;
+    this->_attDmg = 30;
     std::cout << "FragTrap\t" << _name << " created." << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
-    this->_ep = 50;
-    this->_attDmg = 20;
+    this->_ep = 100;
+    this->_attDmg = 30;
     std::cout << "FragTrap\t" << _name << " created." << std::endl;
 }
 
@@ -44,7 +44,7 @@ void FragTrap::attack(std::string const & target) {
         return ;
     }
 
-    std::cout << this->_name << " attacks " << target << ", causing " << this->getAttDmg() << " points of damage!" << std::endl;
+    std::cout << "FragTrap\t" << this->_name << " attacks " << target << ", causing " << this->getAttDmg() << " points of damage!" << std::endl;
 
     int newEp = ep - 1;
     newEp = newEp > 0 ? newEp : 0;
