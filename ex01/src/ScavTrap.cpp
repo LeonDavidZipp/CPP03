@@ -14,7 +14,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
     std::cout << "ScavTrap\t" << _name << " created." << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap& other) : ClapTrap(other){
+ScavTrap::ScavTrap(ScavTrap& other) : ClapTrap(other.ClapTrap::getName()) {
     this->_isGuarding = other._isGuarding;
     std::cout << "ScavTrap\t" << _name << " created from another ScavTrap: " << other.getName() << std::endl;
 }

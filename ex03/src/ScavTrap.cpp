@@ -56,7 +56,7 @@ void ScavTrap::attack(std::string const & target) {
         return ;
     }
 
-    std::cout << this->_name << " attacks " << target << ", causing " << this->getAttDmg() << " points of damage!" << std::endl;
+    std::cout << "ScavTrap\t" << this->_name << " attacks " << target << ", causing " << this->getAttDmg() << " points of damage!" << std::endl;
 
     int newEp = ep - 1;
     newEp = newEp > 0 ? newEp : 0;

@@ -6,8 +6,8 @@ int main() {
     std::cout << "hp: " << diamondtrap.getHp() << std::endl;
     std::cout << "ep: " << diamondtrap.getEp() << std::endl;
     std::cout << "attDmg: " << diamondtrap.getAttDmg() << std::endl;
-    DiamondTrap diamondtrap3;
     DiamondTrap diamondtrap2(diamondtrap);
+    DiamondTrap diamondtrap3;
     std::cout << "default name: " << diamondtrap3.getName() << std::endl;
     std::cout << "default hp: " << diamondtrap.getHp() << std::endl;
     std::cout << "default ep: " << diamondtrap.getEp() << std::endl;
@@ -15,11 +15,9 @@ int main() {
     DiamondTrap diamondtrap4("Springtrap");
     diamondtrap3 = diamondtrap4;
 
-
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
-    diamondtrap.setAttDmg(1);
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 6; i++) {
         std::cout << "attack " << i << " -----" << std::endl;
         diamondtrap.attack("Springtrap");
         diamondtrap4.takeDamage(diamondtrap.getAttDmg());
@@ -58,6 +56,9 @@ int main() {
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 
     diamondtrap.whoAmI();
+	diamondtrap2.whoAmI();
+	diamondtrap3.whoAmI();
+	diamondtrap4.whoAmI();
 
     std::cout << std::endl << "--------------------------------" << std::endl << std::endl;
 

@@ -12,7 +12,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
     std::cout << "FragTrap\t" << _name << " created." << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap& other) : ClapTrap(other){
+FragTrap::FragTrap(FragTrap& other) : ClapTrap(other.ClapTrap::getName()) {
     std::cout << "FragTrap\t" << _name << " created from another FragTrap: " << other.getName() << std::endl;
 }
 
